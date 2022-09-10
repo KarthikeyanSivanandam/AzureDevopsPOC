@@ -33,8 +33,12 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
+- task: NuGetCommand@2
+  inputs:
+    command: pack
+    packagesToPack: '**/CVSEncryptionDecryption.csproj'
+    packDestination: '$(Build.ArtifactStagingDirectory)'
 - task: NuGetAuthenticate@1
 - script: |
-      nuget pack ./CVSEncryptionDecryption.csproj
       nuget push -src "EncryptionDecryptionShared" -ApiKey SecretKey CVSEncryptionDecryption.1.1.1.nupkg
-  displayName: "Pack And Push"  
+  displayName: "Push"  
