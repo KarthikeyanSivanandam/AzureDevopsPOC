@@ -42,5 +42,5 @@ steps:
   inputs:
     nuGetServiceConnections: AzureArtifactsPOCServiceConnection
 - script: |
-      nuget push -src "https://pkgs.dev.azure.com/CreatingFeature/_packaging/EncryptionDecryptionShared/nuget/v3/index.json" -ApiKey SecretKey CVSEncryptionDecryption.1.1.2.nupkg
+      dotnet nuget push -src "https://pkgs.dev.azure.com/CreatingFeature/_packaging/EncryptionDecryptionShared/nuget/v3/index.json" -ApiKey SecretKey CVSEncryptionDecryption.1.1.2.nupkg
   displayName: "Push"  
