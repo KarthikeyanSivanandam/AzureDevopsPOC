@@ -41,5 +41,5 @@ steps:
 - task: NuGetAuthenticate@1
 
 - script: |
-    nuget push $(Build.ArtifactStagingDirectory)/**/*.nupkg -src https://pkgs.dev.azure.com/CreatingFeature/_packaging/EncryptionDecryptionShared/nuget/v3/index.json -ApiKey SecretKey
+    nuget push $(Build.ArtifactStagingDirectory)/**/*.nupkg -src https://pkgs.dev.azure.com/CreatingFeature/_packaging/EncryptionDecryptionShared/nuget/v3/index.json -ApiKey SecretKey1
   displayName: "Push"  
