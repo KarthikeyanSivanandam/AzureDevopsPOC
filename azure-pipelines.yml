@@ -42,5 +42,5 @@ steps:
   inputs:
    nuGetServiceConnections: AzureArtifactsPOCServiceConnection
 - script: |
-    nuget push $(Build.ArtifactStagingDirectory)/**/*.nupkg -src https://pkgs.dev.azure.com/CreatingFeature/_packaging/EncryptionDecryptionShared/nuget/v3/index.json -Apikey Secretkey
+    dotnet push $(Build.ArtifactStagingDirectory)/**/*.nupkg -src https://pkgs.dev.azure.com/CreatingFeature/_packaging/EncryptionDecryptionShared/nuget/v3/index.json --api-key Secretkey
   displayName: "Push"  
