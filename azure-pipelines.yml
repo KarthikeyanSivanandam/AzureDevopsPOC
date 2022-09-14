@@ -39,8 +39,7 @@ steps:
     packagesToPack: '**/CVSEncryptionDecryption.csproj'
     packDestination: '$(Build.ArtifactStagingDirectory)'
 - task: NuGetAuthenticate@1
-  inputs:
-   nuGetServiceConnections: AzureArtifactsPOCServiceConnection
+
 - script: |
-    dotnet push $(Build.ArtifactStagingDirectory)/**/*.nupkg -src https://pkgs.dev.azure.com/CreatingFeature/_packaging/EncryptionDecryptionShared/nuget/v3/index.json --api-key Secretkey
+    nuget push $(Build.ArtifactStagingDirectory)/**/*.nupkg -src https://pkgs.dev.azure.com/CreatingFeature/_packaging/EncryptionDecryptionShared/nuget/v3/index.json
   displayName: "Push"  
